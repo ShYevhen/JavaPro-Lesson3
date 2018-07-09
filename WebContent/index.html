@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Questionnaire</title>
+<style type="text/css">
+@import url("style/indexstyle.css");
+</style>
+<script type="text/javascript">
+	function robotForm(f) {
+		if (f.robot.checked)
+			f.send.disabled = 0
+		else
+			f.send.disabled = 1
+	}
+</script>
+</head>
+<body>
+	<form action="questionnaire" method="post">
+		<table>
+			<tr>
+				<th><span class="formTextRed">*</span> Surname
+				<th><input type="text" name="surname" size="15" required>
+			<tr>
+				<th><span class="formTextRed">*</span> Name
+				<th><input type="text" name="name" size="15" required>
+			<tr>
+				<th><span class="formTextRed">*</span> Age
+				<th><input type="number" name="age" min="5" max="120" required>
+			<tr>
+				<th colspan="2">What your English level?
+			<tr>
+				<th colspan="2"><input type="radio" name="language"
+					value="Elementary">Elementary
+			<tr>
+				<th colspan="2"><input type="radio" name="language"
+					value="Pre-Intermediate" checked>Pre-Intermediate
+			<tr>
+				<th colspan="2"><input type="radio" name="language"
+					value="Intermediate">Intermediate
+			<tr>
+				<th colspan="2"><input type="radio" name="language"
+					value="Upper-Intermediate">Upper-Intermediate
+			<tr>
+				<th colspan="2"><input type="radio" name="language"
+					value="Advanced">Advanced
+			<tr>
+				<th colspan="2"><input type="radio" name="language"
+					value="Proficiency">Proficiency
+			<tr>
+				<th colspan="2">What program language do you know?
+			<tr>
+				<th><input type="checkbox" name="checkbox1">Java
+				<th><input type="checkbox" name="checkbox2">C++
+			<tr>
+				<th><input type="checkbox" name="checkbox3">Python
+				<th><input type="checkbox" name="checkbox4">Others
+			<tr>
+				<th colspan="2">Do you want to learn some other new programming
+					language?
+			<tr>
+				<th><input type="radio" name="learn" value="Yes" checked>Yes
+
+				
+				<th><input type="radio" name="learn" value="No">No
+			<tr>
+				<th><input class="submit" type="submit" value="Send"
+					name="send" disabled="disabled">
+				<th>I'm not a robot<input type="checkbox" name="robot"
+					onclick="robotForm(this.form)">
+		</table>
+	</form>
+	<form action="questionnaire" method="get">
+		<table>
+			<tr>
+				<td>Get result of questionnaire
+				<td><input type="submit" formmethod="get" value="Get result">
+		</table>
+	</form>
+</html>
